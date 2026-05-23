@@ -1,11 +1,7 @@
-// =============================================
-// BÀI TẬP: HỆ THỐNG QUẢN LÝ TRƯỜNG HỌC
-// Viết theo kiểu dễ hiểu cho người mới học Dart
-// =============================================
 
 import 'dart:io';
 
-// ----- Lớp cha Person -----
+
 class Person {
   String id;
   String name;
@@ -15,7 +11,6 @@ class Person {
   Person(this.id, this.name, this.age, this.gender);
 }
 
-// ----- Lớp Student kế thừa Person -----
 class Student extends Person {
   String grade; // lớp học (vd: 10A1)
 
@@ -114,7 +109,6 @@ class Student extends Person {
   }
 }
 
-// ----- Lớp Teacher kế thừa Person -----
 class Teacher extends Person {
   String subject;
   double salary;
@@ -139,7 +133,6 @@ class Teacher extends Person {
   }
 }
 
-// ----- Lớp Classroom -----
 class Classroom {
   String id;
   String name;
@@ -229,7 +222,6 @@ class Classroom {
   }
 }
 
-// ----- Quản lý trường -----
 class School {
   List<Student> students = [];
   List<Teacher> teachers = [];
@@ -244,7 +236,6 @@ class School {
     return null;
   }
 
-  // Tìm theo ID hoặc tên
   Student? timHocSinh(String tuKhoa) {
     Student? hs = timHocSinhTheoId(tuKhoa);
     if (hs != null) {
@@ -375,10 +366,6 @@ class School {
   }
 }
 
-// =============================================
-// HÀM NHẬP DỮ LIỆU
-// =============================================
-
 Student nhapHocSinh() {
   print('');
   print('--- Nhập học sinh ---');
@@ -440,10 +427,6 @@ void hienMenu() {
   print('0. Thoát');
   print('==========================');
 }
-
-// =============================================
-// HÀM MAIN
-// =============================================
 
 void main() {
   School truong = School();
